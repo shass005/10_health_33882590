@@ -1,6 +1,7 @@
 // Create a new router
 const express = require("express")
 const router = express.Router()
+const db = global.db;
 
 router.get('/search',function(req, res, next){
     res.render("search.ejs")
