@@ -34,7 +34,7 @@ router.post('/registered', function (req, res, next) {
     });
 });
 router.get('/list', function(req, res, next) {
-        let sqlquery = "SELECT first_name, last_name, email, username FROM users;"; // query database to get all the users
+        let sqlquery = "SELECT first_name, last_name, email, username FROM users"; // query database to get all the users
         // execute sql query
         db.query(sqlquery, (err, result) => {
             if (err) {
