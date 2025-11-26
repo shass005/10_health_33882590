@@ -2,14 +2,14 @@
 const express = require("express")
 const router = express.Router()
 const db = global.db;
-
+const {redirectLogin} = require('./users') 
 router.get('/search',function(req, res, next){
     res.render("search.ejs")
 });
 
 router.get('/search-result', function (req, res, next) {
     //searching in the database
-    const keyword = req.query.keyword;
+    const keyword = req.sanitize(req.query.keyword);
     let sqlquery = "SELECT * FROM books WHERE name like ?"; // query database to get all the books
     // execute sql query
     db.query(sqlquery, [`%${keyword}%`], (err, result) => {
@@ -36,7 +36,7 @@ router.post('/bookadded', function(req, res, next) {
     });
 });
 
-router.get('/list', function(req, res, next) {
+router.get('/list', redirectLogin, function(req, res, next) {
         let sqlquery = "SELECT * FROM books"; // query database to get all the books
         // execute sql query
         db.query(sqlquery, (err, result) => {

@@ -1,13 +1,14 @@
 # Create database script for Berties books
 
-# Create the application user 
-CREATE USER IF NOT EXISTS 'berties_books_app'@'localhost' 
-IDENTIFIED WITH mysql_native_password BY 'qwertyuiop';
-GRANT ALL PRIVILEGES ON berties_books.* TO 'berties_books_app'@'localhost';
-
 # Create the database
 CREATE DATABASE IF NOT EXISTS berties_books;
 USE berties_books;
+
+# Create the application user 
+CREATE USER IF NOT EXISTS 'berties_books_app'@'localhost' 
+IDENTIFIED BY 'qwertyuiop';
+GRANT ALL PRIVILEGES ON berties_books.* TO 'berties_books_app'@'localhost';
+
 
 # Create Books tables
 CREATE TABLE IF NOT EXISTS books (

@@ -47,6 +47,27 @@ A simple Express.js web application that manages books in an online store.
 - The dotenv module is used to load sensitive configuration variables like the database credentialsfrom an .env file, keeping them secure and out of exposure.
 - This is done by including it in the `.gitignore` file.
 
+### Input Sanitisation
+- Fields:
+ - First Name
+ - Last Name
+ - Email 
+ - Book Addition Entries
+- Why:
+ - Because these fields are render as texts. Sanitising them converts them into plain text so any script inserted is not run.
+
+ ### Input Validation
+- Fields:
+ - Registration Page:
+  - Password should be between 8 and 20 characters
+  - Email must be in valid format
+  - Username should be between 5 and 20 characters
+ - Login Page
+  - Username field should not be empty
+  - Password field should not be empty
+- Why:
+ - In order to prevent invalid entries from being inserted into the database and to ensure user submition is in correct format.
+
 ## Getting Started
 
 ### Installation and Running
@@ -55,7 +76,7 @@ A simple Express.js web application that manages books in an online store.
 
 ```bash
 git clone https://github.com/shass005/06_berties_33882590.git
-cd 04_express_33882590
+cd 06_berties_33882590
 ```
 2. Install Node.js (if not already installed)
 - Node.js installed (Download from [nodejs.org](https://nodejs.org))
@@ -66,6 +87,9 @@ npm install ejs
 np, install dotenv
 npm install mysql2
 npm install bcrypt
+npm install express-validator
+npm install express-sanitizer
+npm install express-session
 ```
 4. Create the .env file
 ```bash
