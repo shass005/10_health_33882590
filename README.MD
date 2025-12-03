@@ -68,6 +68,18 @@ A simple Express.js web application that manages books in an online store.
 - Why:
  - In order to prevent invalid entries from being inserted into the database and to ensure user submition is in correct format.
 
+ ### Search Terms in API
+ - http://localhost:8000/api/books:
+ - This router endpoint lets you fetch the list of books from the SQL database. You can filter, search, and sort the results using the following query parameters:
+ - http://localhost:8000/api/books?search=world:
+ - Filter books whose name contains the given keyword
+ - http://localhost:8000/api/books?minprice=5&max_price=20:
+ - Filter books whose price falls within the given price range
+ - http://localhost:8000/api/books?sort=name:
+ - Filter books in alphabeticall order 
+ - http://localhost:8000/api/books?sort=price:
+ - Filter books by price in descending order
+
 ## Getting Started
 
 ### Installation and Running

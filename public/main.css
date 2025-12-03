@@ -42,11 +42,33 @@ a:link {
     padding:5px;
   }
 
-    table{
+  table{
    width:100%;
    text-align: center;
    border: 2px solid black;
 }
   td,th{
    border: 2px solid black;
+}
+.weather-card {
+   width: 350px;
+   margin: 40px auto;
+   padding: 20px;
+   background: #bbc3c7;
+   border-radius: 10px;
+   border: 1px solid #b6d9e8;
+   font-family: Arial, sans-serif;
+   text-align: center;
+   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.weather-card h2 {
+  color: #0077b6;
+  margin-bottom: 15px;
+}
+
+.weather-info {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #023047;
 }

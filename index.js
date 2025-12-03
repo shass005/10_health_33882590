@@ -52,6 +52,14 @@ app.locals.shopData = {shopName: "Bertie's Books"}
 const mainRoutes = require("./routes/main")
 app.use('/', mainRoutes)
 
+// Load the route handlers for /weather
+const weatherRoutes = require("./routes/weather")
+app.use('/weather', weatherRoutes)
+
+// Load the route handlers for /api
+const apiRoutes = require("./routes/api")
+app.use('/api', apiRoutes)
+
 // Load the route handlers for /users
 const usersRoutes = require('./routes/users')
 app.use('/users', usersRoutes.router)
