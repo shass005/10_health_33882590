@@ -20,16 +20,16 @@ A simple Express.js web application that manages books in an online store.
   - `/` - Main page returning shop name and links to other pages
   - `/about` - Simple about page
   - `/search` - Search page where users can search for books by name.
- - `/search-result` - Shows the result of the search submission
- - `/register` - Registration page with a form for user details
- - `/registered` - Shows a success message after user registration.
- - `/login` -  login page
- - `/loggedin` - Shows success or failure message after login attempt.
-  - `/bargainbooks` - Shows books under £20.
-  - `/addbook` - Allows users to add books.
-  - `/bookadded` - Shows validation message when books are added to the database.
-  - `/list` - Shows list of books in the database.
- - `/audit` - Shows audit history.
+   - `/search-result` - Shows the result of the search submission
+   - `/register` - Registration page with a form for user details
+   - `/registered` - Shows a success message after user registration.
+   - `/login` -  login page
+   - `/loggedin` - Shows success or failure message after login attempt.
+   - `/bargainbooks` - Shows books under £20.
+   - `/addbook` - Allows users to add books.
+   - `/bookadded` - Shows validation message when books are added to the database.
+   - `/list` - Shows list of books in the database.
+   - `/audit` - Shows audit history.
 
 ### User Registration and Login
 - Users can register with a first name, last name, email, username, and password. The password is hashed using bcrypt before storing it in the database.
@@ -40,7 +40,7 @@ A simple Express.js web application that manages books in an online store.
 - This is done by creating a seperate database table with the three columns, every time there is an attempted login, the username and attempt satus are added to the database.
 - The `/users/audit` page displays the table with the complete audit history.
 
-### styling
+### Styling
 - External stylesheet to set style and format of the content
 
 ### dotenv configuration
