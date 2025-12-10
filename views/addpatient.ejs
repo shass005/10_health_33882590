@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+    <title>Add Patient  <%= clinicData.clinicName %></title>
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+</head>
+<body>
+    <h1><%= clinicData.clinicName %>: Add Patient</h1>
+
+    <form method="POST" action="/patient/patientadded">
+        <p>First Name: <input id="first_name" type="text" name="first_name" required/></p>
+        <p>Last Name: <input id="last_name" type="text" name="last_name" required/></p>
+        <p>Date of Birth: <input id="dob" type="date" name="dob" required/></p>
+
+        <input type="submit" value="Add Patient" />
+    </form>
+
+    <p><a href="/">Back to Home</a></p>
+</body>
+</html>

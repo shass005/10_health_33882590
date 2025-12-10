@@ -1,74 +1,198 @@
-h1 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    color: darkcyan;
+body {
+    font-family: "Inter", Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    color: #333;
 }
 
-h2 {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
-    color: cadetblue;
+h1, h2, h3 {
+    font-weight: 600;
+    color: #0a4f6c;
+    margin-top: 0;
+    text-align: center;
 }
 
-p,li {
-    font-family: Arial, Helvetica, sans-serif;
+p, label, td, th, li {
+    font-size: 16px;
+}
+.about{
+    width: 90%;
+    max-width: 650px;
+    margin: 40px auto;
+    background: rgb(233, 234, 237);
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);   
+}
+.container, .homepage_card {
+    width: 90%;
+    max-width: 650px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
 }
 
-a:link {
-    color: orangered;
+.indexejs {
+    background:
+        linear-gradient(160deg, rgba(0,60,120,0.7), rgba(10,100,180,0.7)),
+        url("https://media.istockphoto.com/id/1988844230/photo/paediatric-medical-check-up.jpg?s=612x612&w=0&k=20&c=hz7jXpJmcvxSVkJLBucMOem1CYpjTGF-z0dUPGNSCgA=") center/cover;
+    min-height: 100vh;
+    padding: 50px 0;
+}
+
+.homepage_card {
+    text-align: center;
+    background: rgba(255,255,255,0.9);
+    padding: 40px;
+}
+
+.homepage_card a {
+    display: block;
+    font-size: 18px;
+    padding: 12px;
+    margin: 10px 0;
+    background: #1a8fbf;
+    color: #fff;
+    border-radius: 8px;
     text-decoration: none;
-    padding:5px;
-  }
-  
-  /* visited link */
-  a:visited {
-    color: tomato;
-    text-decoration: none;
-    padding:5px;
-  }
-  
-  /* mouse over link */
-  a:hover {
+    transition: 0.2s ease;
+}
+.homepage_card a:hover {
+    background: #0f6f9b;
+    transform: translateY(-2px);
+}
+
+form p {
+    margin-bottom: 20px;
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #0a4f6c;
+    display: block;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="email"],
+input[type="password"],
+input[type="time"],
+select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #b6c5d1;
+    border-radius: 8px;
+    background: #fbfdff;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border 0.25s ease;
+}
+
+input:focus,
+select:focus {
+    border-color: #1a8fbf;
+    outline: none;
+    box-shadow: 0 0 6px rgba(26,143,191,0.3);
+}
+
+button,
+input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    background: #1a8fbf;
     color: white;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: 0.2s ease;
+}
+
+button:hover,
+input[type="submit"]:hover {
+    background: #0f6f9b;
+    transform: translateY(-2px);
+}
+
+a {
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+    color: #1a8fbf;
     text-decoration: none;
-    background-color: orangered;
-    padding:5px;
-  }
-  
-  /* selected link */
-  a:active {
-    color: blue;
-    text-decoration: none;
-    padding:5px;
-  }
-
-  table{
-   width:100%;
-   text-align: center;
-   border: 2px solid black;
+    font-weight: 600;
 }
-  td,th{
-   border: 2px solid black;
-}
-.weather-card {
-   width: 350px;
-   margin: 40px auto;
-   padding: 20px;
-   background: #bbc3c7;
-   border-radius: 10px;
-   border: 1px solid #b6d9e8;
-   font-family: Arial, sans-serif;
-   text-align: center;
-   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+a:hover {
+    color: white;
+    background: #1a8fbf;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.2s ease;
 }
 
-.weather-card h2 {
-  color: #0077b6;
-  margin-bottom: 15px;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    background: white;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.07);
 }
 
-.weather-info {
-  font-size: 18px;
-  line-height: 1.6;
-  color: #023047;
+th {
+    background: #1a8fbf;
+    color: white;
+    padding: 14px;
+    font-size: 17px;
+    text-align: left;
+}
+
+td {
+    padding: 14px;
+    border-bottom: 1px solid #e0e6eb;
+}
+
+tr:nth-child(even) {
+    background: #f5f9fc;
+}
+
+tr:hover {
+    background: #e8f5fb;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+li {
+    background: #ffffff;
+    padding: 15px;
+    margin: 12px 0;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    font-size: 18px;
+}
+@media (max-width: 600px) {
+    .container, .homepage_card {
+        padding: 20px;
+    }
+
+    input, select {
+        font-size: 14px;
+    }
+
+    th, td {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    button, input[type="submit"] {
+        font-size: 16px;
+    }
 }

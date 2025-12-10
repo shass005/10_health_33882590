@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+    <title>Book Appointment <%= clinicData.clinicName %></title>
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+</head>
+<body>
+
+<h1><%= clinicData.clinicName %></h1>
+<h2>Book a New Appointment</h2>
+
+<div class="container">
+
+    <form method="POST" action="/appointments/book">
+
+        <p>
+            <label for="patient_first">Patient First Name</label>
+            <input type="text" name="patient_first" id="patient_first" required />
+        </p>
+
+        <p>
+            <label for="patient_last">Patient Last Name</label>
+            <input type="text" name="patient_last" id="patient_last" required />
+        </p>
+
+        <p>
+            <label for="date">Appointment Date</label>
+            <input type="date" name="date" id="date" required 
+           min="<%= new Date().toISOString().split('T')[0] %>" max="<%= new Date(Date.now() + 5 * 24 * 60 * 60 * 1000).toISOString().split('T')[0] %>"
+    />
+        </p>
+
+        <p>
+            <label for="time">Available Times</label>
+            <select name="time" id="time" required>
+                <option value="">Select a time</option>
+                <% timeSlots.forEach(function(slot) { %>
+                    <option value="<%= slot %>"><%= slot %></option>
+                <% }) %>
+            </select>
+        </p>
+
+        <input type="submit" value="Book Appointment" />
+
+    </form>
+
+    <a href="/">Back to Home</a>
+</div>
+
+</body>
+</html>

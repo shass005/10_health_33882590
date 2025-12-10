@@ -1,11 +1,11 @@
 <!doctype html>
 <html>
   <head>
-    <title>Welcome to <%=shopData.shopName%></title>
+    <title>Welcome to <%=clinicData.clinicName%></title>
     <link rel="stylesheet"  type="text/css" href="/main.css" />
   </head>
   <body>
-    <h1><%=shopData.shopName%></h1>
+    <h1><%=clinicData.clinicName%></h1>
     <h2>Here is the audit history:</h2>
     <table>
     <thead>
@@ -24,6 +24,8 @@
             </tr>
         <% }); %>
     </tbody>
+    
 </table>
+<p><a href="/">Back to Home</a></p>
 </body>
 </html>

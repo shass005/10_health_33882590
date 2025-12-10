@@ -1,7 +1,7 @@
 
-# Berties_Books App
+# Clinic Management App
 
-A simple Express.js web application that manages books in an online store.
+A web-based application for managing patients, appointments, and staff in a health clinic.
 
 ## Technologies Used
 
@@ -12,24 +12,23 @@ A simple Express.js web application that manages books in an online store.
 - **MySQL** - Database for storing books, user data, and login history.
 - **bcrypt** - Used to securely hash passwords
 - **dotenv** - Used to manage environment variables securely.
+- **express-validator & express-sanitizer** – Input validation and sanitization
 
 ## Features
 
 ### Routes
 - Handles multiple routes such as:
-  - `/` - Main page returning shop name and links to other pages
-  - `/about` - Simple about page
-  - `/search` - Search page where users can search for books by name.
- - `/search-result` - Shows the result of the search submission
- - `/register` - Registration page with a form for user details
- - `/registered` - Shows a success message after user registration.
- - `/login` -  login page
- - `/loggedin` - Shows success or failure message after login attempt.
-  - `/bargainbooks` - Shows books under £20.
-  - `/addbook` - Allows users to add books.
-  - `/bookadded` - Shows validation message when books are added to the database.
-  - `/list` - Shows list of books in the database.
- - `/audit` - Shows audit history.
+  - `/` - Main page returning clinic name and links to other pages
+  - `/about` - Clinic information page
+  - /patient/add – Form to add new patients
+  - `/patient/find` – Search for patients
+  - `/patient/list` – View all patients
+  - `/appointments/book` – Book appointments for registered patients
+  - `/appointments/list` – List all appointments
+  - `/users/register` – Patient registration page
+  - `/users/login` – Login page
+  - `/users/audit` – View login audit history
+  - `/logout` – Logout
 
 ### User Registration and Login
 - Users can register with a first name, last name, email, username, and password. The password is hashed using bcrypt before storing it in the database.
@@ -47,38 +46,15 @@ A simple Express.js web application that manages books in an online store.
 - The dotenv module is used to load sensitive configuration variables like the database credentialsfrom an .env file, keeping them secure and out of exposure.
 - This is done by including it in the `.gitignore` file.
 
-### Input Sanitisation
-- Fields:
- - First Name
- - Last Name
- - Email 
- - Book Addition Entries
-- Why:
- - Because these fields are render as texts. Sanitising them converts them into plain text so any script inserted is not run.
+### Data Validation & Security
+- Input sanitization for text fields to prevent XSS and other attacks
+- Input validation for registration and booking forms to ensure correct formatting
 
- ### Input Validation
-- Fields:
- - Registration Page:
-  - Password should be between 8 and 20 characters
-  - Email must be in valid format
-  - Username should be between 5 and 20 characters
- - Login Page
-  - Username field should not be empty
-  - Password field should not be empty
-- Why:
- - In order to prevent invalid entries from being inserted into the database and to ensure user submition is in correct format.
-
- ### Search Terms in API
- - http://localhost:8000/api/books:
- - This router endpoint lets you fetch the list of books from the SQL database. You can filter, search, and sort the results using the following query parameters:
- - http://localhost:8000/api/books?search=world:
- - Filter books whose name contains the given keyword
- - http://localhost:8000/api/books?minprice=5&max_price=20:
- - Filter books whose price falls within the given price range
- - http://localhost:8000/api/books?sort=name:
- - Filter books in alphabeticall order 
- - http://localhost:8000/api/books?sort=price:
- - Filter books by price in descending order
+ ### API
+ - `/api` – Fetches appointments as JSON
+  - It allows for query parameters including: 
+    - search: first or last name
+    - date: sorts by date, first name, last name
 
 ## Getting Started
 
@@ -92,6 +68,7 @@ cd 06_berties_33882590
 ```
 2. Install Node.js (if not already installed)
 - Node.js installed (Download from [nodejs.org](https://nodejs.org))
+
 3. Insall dependencied
 ```bash
 npm install express
@@ -108,12 +85,26 @@ npm install express-session
 DB_HOST=localhost
 DB_USER=your_db_user
 DB_PASSWORD=your_db_password
-DB_NAME=berties_books
+DB_NAME=clinic
+
+HEALTH_HOST=localhost
+HEALTH_USER=user
+HEALTH_PASSWORD=password
+HEALTH_DATABASE=health
+HEALTH_BASE_PATH=http://localhost:8000
 ```
-5. Run the Server
+
+5. Load the database and insert data
+```
+mySQL:
+SOURCE your/path/to/create_db.sql
+SOURCE your/path/to/insert_test_data.sql
+```
+
+6. Run the Server
 ```bash
 node index.js
 ```
-6. Open your browser
+7. Open your browser
 Visit: http://localhost:8000
 The webpage should be rendered

@@ -5,48 +5,44 @@ const request = require('request');
 const { param } = require("./main");
 const db = global.db;
 
+router.get('/', redirectLogin, (req, res, next) => {
+    const { search, date, sort } = req.query;
 
-router.get('/books', function (req, res, next) {
-    let search = req.query.search;
-    let minPrice = req.query.minprice;
-    let maxPrice = req.query.max_price;
-    let sort = req.query.sort;
-
-    // Query database to get all the books
-    let sqlquery = "SELECT * FROM books WHERE 1=1";
+    let sql = "SELECT * FROM appointments WHERE 1=1";
     let params = [];
 
-    if(search){
-        sqlquery += " AND name LIKE ?";
-        params.push(`%${search}%`);
+    if (search) {
+        sql += " AND (first_name LIKE ? OR last_name LIKE ?)";
+        params.push(`%${search}%`, `%${search}%`);
     }
-    if(minPrice && maxPrice){
-        sqlquery += " AND price BETWEEN ? AND ?";
-        params.push(minPrice, maxPrice)
+
+    if (date) {
+        sql += " AND date = ?";
+        params.push(date);
     }
-    if (sort){
-        switch(sort.toLowerCase()){
-            case "name":
-                sqlquery += " ORDER BY name ASC";
+
+    if (sort) {
+        switch (sort.toLowerCase()) {
+            case "date":
+                sql += " ORDER BY date ASC, time ASC";
                 break;
-            case "price":
-                sqlquery += " ORDER BY price DESC";  
+            case "firstname":
+                sql += " ORDER BY first_name ASC";
+                break;
+            case "lastname":
+                sql += " ORDER BY last_name ASC";
                 break;
             default:
                 break;
         }
     }
-    // Execute the sql query
-    db.query(sqlquery, params, (err, result) => {
-        // Return results as a JSON object
+
+    db.query(sql, params, (err, results) => {
         if (err) {
-            res.json(err)
-            next(err)
+            return next(err);
         }
-        else {
-            res.json(result)
-        }
-    })
-})
+        res.json(results);
+    });
+});
 
 module.exports = router;

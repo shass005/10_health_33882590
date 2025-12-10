@@ -1,20 +1,23 @@
 <!doctype html>
 <html>
   <head>
-    <title>Welcome to <%=shopData.shopName%></title>
+    <title>Welcome to <%=clinicData.clinicName %></title>
     <link rel="stylesheet"  type="text/css" href="/main.css" />
   </head>
-  <body>
-    <h1>Welcome to <%=shopData.shopName%></h1>
-    <p><a href="about">About <%=shopData.shopName%></a></p>
-    <p><a href="books/search">Search for books</a></p>
-    <p><a href="users/register">Register with us</a></p>
-    <p><a href="books/addbook">Add a new book</a></p>
-    <p><a href="books/list">List books</a></p>
-    <p><a href="books/bargainbooks">bargainbooks</a></p>
-    <p><a href="users/list">User List</a></p>
-    <p><a href="weather">Weather</a></p>
-    <p><a href="users/login">Login</a></p>
-    <p><a href="logout">Log-out</a></p>
+  <body class="indexejs">
+    <div class="homepage_card">
+      <h1>Welcome to <%= clinicData.clinicName %></h1>
+      <p><a href="/">Home</a></p>
+      <p><a href="/about">About <%=clinicData.clinicName %></a></p>
+      <p><a href="/patient/find">Find Patients</a></p>
+      <p><a href="/patient/add">Add New Patient</a></p>
+      <p><a href="/patient/list">Patient List</a></p>
+      <p><a href="/users/register">Registration page</a></p>
+      <p><a href="/appointments/book">Book Appointment</a></p>
+      <p><a href="/appointments/list">Appointments List</a></p>
+      <p><a href="/users/login">Login</a></p>
+      <p><a href="/users/audit">Audit</a></p>
+      <p><a href="/logout">Logout</a></p>
+    </div>
   </body>
 </html>

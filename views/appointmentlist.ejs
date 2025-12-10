@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+    <title>Appointments <%= clinicData.clinicName %></title>
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+</head>
+<body>
+    <h1><%= clinicData.clinicName %></h1>
+    <h2>Upcoming Appointments</h2>
+
+    <ul>
+        <% appointments.forEach(function(app) { %>
+            <li>
+                <strong><%= app.first_name %> <%= app.last_name %></strong>
+                — <%= new Date(app.date).toLocaleDateString('en-GB') %> at <%= app.time %>
+            </li>
+        <% }); %>
+    </ul>
+
+    <p><a href="/">Back to Home</a></p>
+</body>
+</html>

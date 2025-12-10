@@ -1,31 +1,39 @@
-# Create database script for Berties books
-
-# Create the database
-CREATE DATABASE IF NOT EXISTS berties_books;
-USE berties_books;
+CREATE DATABASE IF NOT EXISTS health;
 
 # Create the application user 
-CREATE USER IF NOT EXISTS 'berties_books_app'@'localhost' 
+
+CREATE USER IF NOT EXISTS 'health_app'@'localhost' 
 IDENTIFIED BY 'qwertyuiop';
-GRANT ALL PRIVILEGES ON berties_books.* TO 'berties_books_app'@'localhost';
+GRANT ALL PRIVILEGES ON health.* TO 'health_app'@'localhost';
 
+USE health;
 
-# Create Books tables
-CREATE TABLE IF NOT EXISTS books (
-    id     INT AUTO_INCREMENT,
-    name   VARCHAR(50),
-    price  DECIMAL(5, 2),
-    PRIMARY KEY(id));
-
-# Create the User tables
-CREATE TABLE IF NOT EXISTS users(
+CREATE TABLE IF NOT EXISTS patients (
     id INT AUTO_INCREMENT,
     first_name VARCHAR(50),
     last_name VARCHAR(50),
+    dob DATE,
+    PRIMARY KEY(id)
+);
+
+CREATE TABLE IF NOT EXISTS appointments (
+    id INT AUTO_INCREMENT,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    date DATE,
+    time VARCHAR(10),
+    PRIMARY KEY(id)
+);
+
+CREATE TABLE IF NOT EXISTS staff (
+    id INT AUTO_INCREMENT,
+    first_name VARCHAR(50) UNIQUE,
+    last_name VARCHAR(50) UNIQUE,
     email VARCHAR(50) UNIQUE,
     username VARCHAR(50) UNIQUE,
-    password VARCHAR(255) NOT NULL,
-    PRIMARY KEY(id));
+    password VARCHAR(255),
+    PRIMARY KEY(id)
+);
 
 # Create an audit table
 CREATE TABLE IF NOT EXISTS audit(

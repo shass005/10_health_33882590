@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+<head>
+    <title>Search Patients <%= clinicData.clinicName %></title>
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+</head>
+<body>
+    <h1>Search Patients at <%= clinicData.clinicName %></h1>
+
+    <form action="/patient/search-result" method="GET">
+        <p>Enter patients last name:</p>
+        <input id="search-box" type="text" name="keyword" required>
+        <input type="submit" value="Search">
+    </form>
+
+    <p><a href="/">Back to Home</a></p>
+</body>
+</html>

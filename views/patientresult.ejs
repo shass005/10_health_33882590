@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+    <title>Search Results <%= clinicData.clinicName %></title>
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+</head>
+<body>
+    <h1>Patient Search Results</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>First</th>
+                <th>Last</th>
+                <th>DOB</th>
+                <th>Appointment Date</th>
+                <th>Appointment Time</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% patients.forEach(function(p) { %>
+                <tr>
+                    <td><%= p.first_name %></td>
+                    <td><%= p.last_name %></td>
+                    <td><%= new Date(p.dob).toLocaleDateString('en-GB') %></td>
+                    <td><%= p.appointment_date ? p.appointment_date.toISOString().slice(0,10) : "None" %></td>
+                    <td><%= p.appointment_time || "None" %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+
+    <p><a href="/">Back</a></p>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+    <title>User List  <%= clinicData.clinicName %></title>
+    <link rel="stylesheet" type="text/css" href="/main.css" />
+</head>
+<body>
+    <h1> Patients <%= clinicData.clinicName %></h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Date Of Birth</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% availablePatients.forEach(function(user) { %>
+                <tr>
+                    <td><%= user.first_name %></td>
+                    <td><%= user.last_name %></td>
+                    <td><%= new Date(user.dob).toLocaleDateString('en-GB') %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+
+    <p><a href="/">Back to Home</a></p>
+</body>
+</html>
