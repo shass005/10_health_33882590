@@ -39,7 +39,7 @@ A web-based application for managing patients, appointments, and staff in a heal
 - This is done by creating a seperate database table with the three columns, every time there is an attempted login, the username and attempt satus are added to the database.
 - The `/users/audit` page displays the table with the complete audit history.
 
-### styling
+### Styling
 - External stylesheet to set style and format of the content
 
 ### dotenv configuration
@@ -82,11 +82,6 @@ npm install express-session
 ```
 4. Create the .env file
 ```bash
-DB_HOST=localhost
-DB_USER=your_db_user
-DB_PASSWORD=your_db_password
-DB_NAME=clinic
-
 HEALTH_HOST=localhost
 HEALTH_USER=user
 HEALTH_PASSWORD=password
