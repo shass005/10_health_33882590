@@ -1,1 +1,12 @@
 home=https://www.doc.gold.ac.uk/usr/425/
+API=https://www.doc.gold.ac.uk/usr/425/api
+About=https://www.doc.gold.ac.uk/usr/425/about
+Search=https://www.doc.gold.ac.uk/usr/425/patient/find
+Add_Patient=https://www.doc.gold.ac.uk/usr/425/patient/add
+Patient_List=https://www.doc.gold.ac.uk/usr/425/patient/list
+Registration=https://www.doc.gold.ac.uk/usr/425/users/register
+Book_Appointment=https://www.doc.gold.ac.uk/usr/425/appointments/book
+Appointment_List=https://www.doc.gold.ac.uk/usr/425/appointments/list
+Audit=https://www.doc.gold.ac.uk/usr/425/users/audit
+Login=https://www.doc.gold.ac.uk/usr/425/users/login
+Logout=https://www.doc.gold.ac.uk/usr/425/logout
