@@ -20,7 +20,7 @@ A web-based application for managing patients, appointments, and staff in a heal
 - Handles multiple routes such as:
   - `/` - Main page returning clinic name and links to other pages
   - `/about` - Clinic information page
-  - /patient/add – Form to add new patients
+  - `/patient/add` – Form to add new patients
   - `/patient/find` – Search for patients
   - `/patient/list` – View all patients
   - `/appointments/book` – Book appointments for registered patients
