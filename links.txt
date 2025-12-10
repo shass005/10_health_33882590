@@ -1,5 +1,9 @@
 home=https://www.doc.gold.ac.uk/usr/425/
 API=https://www.doc.gold.ac.uk/usr/425/api
+API=https://www.doc.gold.ac.uk/usr/425/api?search="name"
+API=https://www.doc.gold.ac.uk/usr/425/api?sort="firstname"
+API=https://www.doc.gold.ac.uk/usr/425/api?sort="lastname"
+API=https://www.doc.gold.ac.uk/usr/425/api?sort="date"
 About=https://www.doc.gold.ac.uk/usr/425/about
 Search=https://www.doc.gold.ac.uk/usr/425/patient/find
 Add_Patient=https://www.doc.gold.ac.uk/usr/425/patient/add
